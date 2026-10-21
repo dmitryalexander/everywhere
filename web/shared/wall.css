@@ -1,0 +1,76 @@
+/* A full-width image wall with stable placement as each new batch arrives. */
+.media-wall{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:14px;width:100%!important;max-width:none!important;column-count:auto!important;box-sizing:border-box}
+.media-wall.wall-ready{display:block!important;position:relative;columns:auto!important}
+.media-wall.wall-ready> *{position:absolute!important;box-sizing:border-box;margin:0!important;max-width:none!important;min-width:0;break-inside:avoid}
+.media-wall img{height:auto;max-width:100%}
+.continuous-status{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;padding:28px 12px;min-height:40px;box-sizing:border-box;width:100%;color:#aaa;font:14px Arial,sans-serif;text-align:center}
+.continuous-status button{font:inherit;font-weight:700;color:white;background:#e60023;border:0;border-radius:24px;padding:11px 22px;cursor:pointer}
+.continuous-status button:disabled{opacity:.55;cursor:wait}
+.continuous-status button:focus-visible{outline:2px solid white;outline-offset:3px}
+.wall-view-options{display:flex;gap:6px;margin:0 0 18px}
+.wall-view-options button{font:600 13px Arial,sans-serif;border:1px solid #393939;border-radius:22px;padding:9px 17px;background:#202020;color:#aaa;cursor:pointer}
+.wall-view-options button[aria-pressed="true"]{background:#eee;color:#151515;border-color:#eee}
+.wall-view-options button:focus-visible{outline:2px solid #ff4563;outline-offset:3px}
+[hidden]{display:none!important}
+body.tumblr-wall .contents{display:flex;flex-direction:column;align-items:stretch;gap:16px;width:100%;padding:0 24px;box-sizing:border-box}
+body.tumblr-wall .left-column,body.tumblr-wall .center-column{width:100%;max-width:none;min-width:0;display:block}
+body.tumblr-wall .right-column{display:none}
+body.tumblr-wall .pb-feed,body.tumblr-wall .pb-start{width:100%;max-width:none}
+body.tumblr-wall .pb-following-panel{position:static;width:100%;max-width:none;max-height:none;margin:0;padding:10px 14px}
+body.tumblr-wall .pb-chips{flex-direction:row;overflow-x:auto;align-items:center;gap:8px}
+body.tumblr-wall .pb-chip{flex-direction:row;width:auto;white-space:nowrap;font-size:13px;padding:5px 10px;gap:8px}
+body.tumblr-wall .pb-chip-name{max-width:150px}
+body.tumblr-wall .pb-chip img,body.tumblr-wall .pb-chip .pb-letter{width:30px;height:30px}
+body.tumblr-wall .pb-chip.pb-add{margin:0}
+body.tumblr-wall .pb-panel-head h2{margin-bottom:4px}
+body.tumblr-wall #blog-header{width:100%;max-width:850px;margin:0 auto 24px}
+body.tumblr-wall .media-wall .post{padding:0;gap:10px;border-radius:12px;overflow:hidden;font-size:13px}
+body.tumblr-wall .media-wall .post-header{padding:10px 12px 0}
+body.tumblr-wall .media-wall .post-author{gap:8px;min-width:0}
+body.tumblr-wall .media-wall .avatar{width:28px;height:28px;flex:none}
+body.tumblr-wall .media-wall .primary-post-author{flex-wrap:wrap;font-size:12px}
+body.tumblr-wall .media-wall .post-body,body.tumblr-wall .media-wall .post-content,body.tumblr-wall .media-wall .post-trails{width:100%;min-width:0;box-sizing:border-box}
+body.tumblr-wall .media-wall .post-body img:not(.avatar),body.tumblr-wall .media-wall .post-body video{border-radius:0;width:100%;height:auto}
+body.tumblr-wall .media-wall .ask{display:flex;gap:8px;align-items:flex-start;padding:0 10px;box-sizing:border-box}
+body.tumblr-wall .media-wall .ask-body{flex:1;min-width:0;width:auto;padding:10px;box-sizing:border-box}
+body.tumblr-wall .media-wall .asker-avatar{width:28px!important;height:28px!important;flex:0 0 28px;border-radius:50%}
+body.tumblr-wall .media-wall .ask-content .text-block{padding:0}
+body.tumblr-wall .media-wall .wall-text-post .post-content{max-height:260px;overflow:hidden}
+body.tumblr-wall .media-wall .wall-read-post{display:block;padding:0 12px;color:#ff6b81;font-weight:700}
+body.tumblr-wall .media-wall .text-block{padding:0 12px;box-sizing:border-box;overflow-wrap:anywhere}
+body.tumblr-wall .media-wall .post-footer{padding:0 12px 12px;gap:8px;width:100%;max-width:100%;box-sizing:border-box;margin:0;align-self:stretch}
+body.tumblr-wall .media-wall .post-interaction{width:100%;max-width:100%;box-sizing:border-box;margin:0}
+body.tumblr-wall .media-wall .post-tags{max-height:42px;overflow:auto;scrollbar-width:thin}
+body.tumblr-wall .media-wall .trail-post{padding:8px 0;gap:8px}
+body.tumblr-wall .media-only .post-body .text-block,body.tumblr-wall .media-only .layout-ask,body.tumblr-wall .media-only .post-tags,body.tumblr-wall .media-only .trail-post>.post-header{display:none}
+body.tumblr-wall .media-only .trail-post{padding:0;border:0;gap:0}
+body.tumblr-wall .media-wall .post-trails>.trail-post:first-child{padding-top:0}
+body.tumblr-wall .media-wall .pb-new{top:0;right:0;font-size:10px;border-radius:0 10px 0 8px}
+body.instagram-wall #main{max-width:none;width:100%;box-sizing:border-box}
+body.instagram-wall .kg-feed-layout{display:flex;flex-direction:column;align-items:stretch;padding:0 24px;gap:18px}
+body.instagram-wall .kg-feed{width:100%;min-width:0}
+body.instagram-wall .kg-following-panel{position:static;max-height:none;padding:10px 14px}
+body.instagram-wall .kg-chips{flex-direction:row;overflow-x:auto;align-items:center;gap:8px}
+body.instagram-wall .kg-chip{flex-direction:row;width:auto;white-space:nowrap;font-size:13px;padding:5px 10px;gap:8px}
+body.instagram-wall .kg-chip-name{max-width:150px}
+body.instagram-wall .kg-chip img,body.instagram-wall .kg-chip .kg-letter{width:30px;height:30px}
+body.instagram-wall .kg-chip.kg-add{margin:0}
+body.instagram-wall .kg-panel-head h2{margin-bottom:4px}
+body.instagram-wall .media-wall .post,body.instagram-wall .media-wall .tile-item{padding:0!important;overflow:hidden;border-radius:12px!important;font-size:13px}
+body.instagram-wall .media-wall .user-info{display:flex;align-items:center;gap:8px;padding:10px 12px!important;margin:0}
+body.instagram-wall .media-wall .user-info img{width:28px!important;height:28px!important;min-width:28px!important;min-height:28px!important;border-radius:50%!important}
+body.instagram-wall .media-wall .username{position:static;font-size:12px;font-weight:700}
+body.instagram-wall .media-wall .post-image{float:none;width:100%;max-width:none;max-height:none;margin:0}
+body.instagram-wall .media-wall .post-image>img,body.instagram-wall .media-wall .post-image>video,body.instagram-wall .media-wall .tile-item-media img,body.instagram-wall .media-wall .tile-item-media video{display:block;width:100%;height:auto;max-height:none;border-radius:0!important;object-fit:contain}
+body.instagram-wall .media-wall .carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;max-width:100%;gap:0}
+body.instagram-wall .media-wall .carousel>*{flex:0 0 100%;min-width:0;width:100%;height:auto;max-height:480px;object-fit:contain;scroll-snap-align:start;border-radius:0!important}
+body.instagram-wall .media-wall .post-info{max-height:none;overflow:visible;padding:10px 12px 0}
+body.instagram-wall .media-wall .post-body{display:block;width:auto;margin:0}
+body.instagram-wall .media-wall .post-caption-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.4}
+body.instagram-wall .media-wall .post-likes p{margin:4px 0;font-size:12px;color:#aaa}
+body.instagram-wall .media-wall .post>a{display:block;padding:6px 12px 12px;color:#999!important;font-size:12px}
+body.instagram-wall .wall-caption summary{cursor:pointer;color:#bbb;font-size:12px;padding:6px 0}
+body.instagram-wall #main>.media-wall{width:calc(100% - 48px)!important;margin:0 24px}
+body.instagram-wall .media-wall .grid-item{display:block;height:auto;aspect-ratio:auto}
+body.instagram-wall .media-wall .grid-item img{display:block;width:100%;height:auto;object-fit:contain}
+@media(max-width:600px){body.tumblr-wall .contents{padding:0 10px}body.instagram-wall .kg-feed-layout{padding:0 10px}body.instagram-wall #main>.media-wall{width:calc(100% - 20px)!important;margin:0 10px}}

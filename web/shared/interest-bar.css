@@ -1,0 +1,65 @@
+/* A compact, horizontally scrolling discovery bar inspired by the supplied reference. */
+.pt-interest-editor{box-sizing:border-box;width:min(680px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;padding:24px;border:1px solid #3b3b3b;border-radius:16px;background:#202020;color:#eee;font:14px/1.5 system-ui,sans-serif;box-shadow:0 16px 60px #0008}
+.pt-interest-editor::backdrop{background:#0009}
+.pt-interest-editor h2{margin:0 0 8px;font-size:22px;color:#fff}
+.pt-interest-editor p{margin:8px 0 16px;color:#aaa}
+.pt-interest-editor label{display:block;margin-bottom:6px;color:#eee}
+.pt-interest-editor textarea{box-sizing:border-box;width:100%;height:min(380px,45vh);resize:vertical;padding:12px;border:1px solid #555;border-radius:8px;background:#121212;color:#eee;font:14px/1.6 system-ui,sans-serif}
+.pt-interest-editor textarea:focus{outline:2px solid #00dc9b;outline-offset:1px}
+.pt-interest-editor .pt-interest-count{font-size:12px;margin:8px 0 18px}
+.pt-interest-editor .pt-interest-error{color:#ffaaaa}
+.pt-interest-editor-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pt-interest-editor-actions span{flex:1}
+.pt-interest-editor-actions button{margin:0;padding:8px 12px;border:1px solid #555;border-radius:8px;background:#292929;color:#eee;font:500 13px/1.4 system-ui,sans-serif;cursor:pointer}
+.pt-interest-editor-actions button:hover{background:#383838}
+.pt-interest-editor-actions .pt-interest-save{background:#00dc9b;border-color:#00dc9b;color:#111}
+.pt-interest-editor-actions button:focus-visible{outline:2px solid #00dc9b;outline-offset:2px}
+body.pt-youtube .pt-header.pt-interest-header{padding:5px 8px!important;gap:8px!important;flex-wrap:nowrap!important;justify-content:flex-start!important;min-height:40px!important;margin-bottom:4px!important}
+body.pt-youtube .pt-header .pt-brand{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 28px!important;width:28px!important;height:28px!important;padding:0!important;margin:0!important;border-radius:50%!important;background:#000!important;color:#eee!important;font:600 13px/1 system-ui,sans-serif!important;text-decoration:none!important}
+body.pt-youtube .pt-header .pt-brand:hover{background:#090909!important;color:#fff!important}
+body.pt-youtube .pt-header .pt-brand:focus-visible{outline:2px solid #00dc9b;outline-offset:2px}
+body.pt-youtube .pt-interest-header .pt-search{flex:0 0 220px!important;max-width:220px!important;min-width:0!important;order:0!important}
+body.pt-youtube .pt-interest-header .pt-search input{height:28px!important;padding:4px 34px 4px 12px!important;font-size:12px!important;border:0!important;border-radius:999px!important;background:#222!important}
+body.pt-youtube .pt-interest-header .pt-search button{left:auto!important;right:10px!important;width:22px!important;height:22px!important;background:transparent!important;color:#e60023!important}
+.pt-interest-header .pt-search button svg{width:17px!important;height:17px!important}
+.pt-interest-bar{display:flex;align-items:center;gap:8px;min-width:0;flex:1;overflow:hidden;padding:0!important;margin:0!important}
+.pt-interest-scroll{display:flex;align-items:center;gap:6px;overflow-x:auto;min-width:0;flex:1;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab;user-select:none;touch-action:pan-x pan-y}
+.pt-interest-scroll.is-dragging,.pt-interest-scroll.is-dragging .pt-interest-chip{cursor:grabbing}
+.pt-interest-scroll::-webkit-scrollbar{display:none}
+.pt-interest-chip{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;white-space:nowrap;height:28px!important;margin:0!important;padding:0 10px!important;border:1px solid #3b3b3b;border-radius:999px;background:#202020;color:#ddd!important;font:500 12px/1.2 system-ui,sans-serif;text-decoration:none!important;cursor:pointer}
+.pt-interest-scroll .pt-interest-chip{display:block;line-height:26px;max-width:220px;overflow:hidden;text-overflow:ellipsis}
+.pt-interest-chip:hover{background:#2c2c2c;color:#fff!important;border-color:#555}
+.pt-interest-chip:focus-visible{outline:2px solid #00dc9b;outline-offset:-3px}
+body.pt-youtube .pt-interest-header .pt-nav{position:static!important;transform:none!important;margin:0!important;gap:8px!important;flex:0 0 auto}
+.pt-interest-header .pt-nav-link{display:none!important}
+.pt-youtube .pt-nav .pt-menu>summary,.pt-youtube .pt-nav .pt-filters>summary{border:1px solid #3b3b3b!important;border-radius:50%!important;background:#202020!important;width:32px!important;height:32px!important;padding:0!important;margin:0!important;display:flex!important;align-items:center;justify-content:center;box-sizing:border-box;font:600 13px/1 system-ui,sans-serif!important;color:#ddd!important;list-style:none;cursor:pointer}
+.pt-youtube .pt-nav .pt-filters{position:relative;display:block!important;margin:0!important;flex:0 0 auto}
+.pt-youtube .pt-nav .pt-filters[open]>summary,.pt-youtube .pt-nav .pt-menu[open]>summary{border-color:#00dc9b!important;color:#fff!important}
+.pt-youtube .pt-nav .pt-filters #filters-box{position:absolute!important;top:calc(100% + 10px);right:-40px;box-sizing:border-box;width:min(720px,calc(100vw - 32px));max-width:none!important;max-height:calc(100vh - 100px);overflow:auto;z-index:50;padding:18px!important;margin:0!important;background:#202020;border:1px solid #3b3b3b;border-radius:14px;box-shadow:0 10px 30px #0008;white-space:normal}
+.pt-youtube .pt-nav #filters-flex{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:16px;align-items:start}
+.pt-youtube .pt-nav .filter-column{padding:0!important;margin:0!important;width:auto!important}
+.pt-youtube .pt-nav #filters-box fieldset{padding:0!important;margin:0!important;min-width:0}
+.pt-youtube .pt-nav #filters-box .filter-options>div{display:flex;align-items:baseline;gap:6px;margin:7px 0}
+.pt-youtube .pt-nav #filters-box label{font-size:12px;white-space:normal}
+.pt-youtube .pt-nav #filters-apply{margin:14px 0 0!important;text-align:right}
+/* S and F circles, left of M: S opens the search terms editor, F (YouTube) the channels you subscribe to. Same look as M. */
+.pt-youtube .pt-nav>.pt-circle{display:flex!important;align-items:center;justify-content:center;flex:0 0 auto;box-sizing:border-box;width:32px!important;height:32px!important;padding:0!important;margin:0!important;border:1px solid #3b3b3b!important;border-radius:50%!important;background:#202020!important;color:#ddd!important;font:600 13px/1 system-ui,sans-serif!important;text-decoration:none!important;text-transform:none!important;cursor:pointer;-webkit-appearance:none;appearance:none}
+.pt-youtube .pt-nav>.pt-circle:hover,.pt-youtube .pt-nav .pt-menu:not([open])>summary:hover,.pt-youtube .pt-nav .pt-filters:not([open])>summary:hover{border-color:#555!important;color:#fff!important}
+.pt-youtube .pt-nav>.pt-circle:focus-visible{outline:2px solid #00dc9b;outline-offset:2px}
+.pt-youtube .pt-nav .pt-filters>summary svg{display:block;width:15px;height:15px}
+@media(max-width:900px){body.pt-youtube .pt-interest-header .pt-search{flex-basis:190px!important;max-width:190px!important}.pt-interest-bar{gap:6px}.pt-interest-scroll{gap:8px}}
+@media(max-width:600px){body.pt-youtube .pt-header.pt-interest-header{flex-wrap:wrap!important;gap:8px!important;padding:8px!important}body.pt-youtube .pt-interest-header .pt-search{flex:1 1 180px!important;max-width:none!important}.pt-interest-bar{order:3;flex:1 1 100%;width:100%}.pt-interest-scroll .pt-interest-chip{max-width:190px}}
+
+/* Center short term lists, with muted dotted connectors filling both sides.
+   When terms overflow, the connectors collapse and horizontal scrolling remains. */
+body .pt-header .pt-interest-scroll::before,
+body .pt-header .pt-interest-scroll::after {
+  content: '';
+  display: block;
+  flex: 1 0 0;
+  min-width: 0;
+  height: 2px;
+  background: radial-gradient(circle, #73603e 1px, transparent 1.1px) left center / 10px 2px repeat-x;
+  pointer-events: none;
+}
+body .pt-header .pt-interest-scroll > .pt-interest-chip { flex-shrink: 0; }

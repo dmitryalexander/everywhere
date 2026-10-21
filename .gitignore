@@ -1,0 +1,13 @@
+# Build output
+/target/
+/Everywhere.exe
+/explorer-bridge.exe
+/recycle-bridge.exe
+# Personal data: collections, groups, followed folders (settings.json, .bak, .tmp)
+/data/
+# Test output
+/test-results/
+self-test.json
+/build-log.txt
+# Personal shortcuts
+*.lnk

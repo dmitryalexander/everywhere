@@ -1,0 +1,21 @@
+[package]
+name = "everywhere"
+version = "0.1.0"
+edition = "2021"
+description = "A visual wall for voidtools Everything"
+build = "build.rs"
+
+[[bin]]
+name = "Everywhere"
+path = "src/main.rs"
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+libloading = "0.8"
+base64 = "0.22"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+rfd = "0.15"
+sha2 = "0.10"
+[profile.release]
+strip = true
+lto = "thin"

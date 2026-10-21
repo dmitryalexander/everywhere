@@ -1,0 +1,146 @@
+:root{--pt-accent:#e9b344;--pt-bg:#111}
+body.pinless-discovery{background:#111!important}
+body.pinless-discovery .pt-header.pt-interest-header{padding:6px 8px!important;gap:8px!important;min-height:48px!important;flex-wrap:nowrap;max-width:100vw}
+body.pinless-discovery .pt-header :is(.pt-circle,.pt-brand,.pt-menu>summary){box-sizing:border-box;display:flex!important;align-items:center;justify-content:center;flex:0 0 32px!important;width:32px!important;height:32px!important;padding:0!important;border:1px solid #3b3b3b!important;border-radius:50%!important;background:#202020;color:#eee!important;cursor:pointer;text-decoration:none;list-style:none}
+body.pinless-discovery .pt-header [aria-current=page]{background:#e9b344!important;color:#17140e!important;border-color:#e9b344!important}
+body.pinless-discovery .pt-header :is(a,button,summary):focus-visible{outline:2px solid #e9b344;outline-offset:2px}
+body.pinless-discovery .pt-header .pt-search{flex:0 1 300px!important;width:300px!important;min-width:130px!important;height:28px}
+body.pinless-discovery .pt-search input{background:#222!important;border-radius:30px!important;padding:8px 42px 8px 18px!important;text-align:center!important;font:16px system-ui!important}
+body.pinless-discovery .pt-search button{color:#eee!important;background:none!important;right:9px!important}
+body.pinless-discovery .pt-header>.pt-interest-bar{flex:1 1 0!important;min-width:0!important;margin:0!important}
+body.pinless-discovery .pt-header .pt-nav{margin-left:auto;gap:8px}
+body.pinless-discovery .pt-header .pt-interest-chip{font:600 12px/26px system-ui!important;padding:0 14px!important;display:inline-flex!important;align-items:center;justify-content:center;white-space:nowrap}
+body.pinless-discovery .pt-header .pt-active-playlist{max-width:100px!important}
+body.pinless-discovery .pt-list-bar{min-width:0;overflow:hidden;flex:1}
+body.pinless-discovery .media-wall{width:100%!important;margin:0!important;padding:0 10px!important;box-sizing:border-box}
+body.pinless-discovery .media-wall>div{box-sizing:border-box;background:transparent;border:0;border-radius:0!important;padding:0!important;margin:0!important;overflow:hidden}
+body.pinless-discovery .media-wall>div.pn-saved{border-color:#363830;box-shadow:inset 0 0 0 2px #62655c}
+body.pinless-discovery .media-wall>div img{border-radius:0!important}
+.pn-panel{box-sizing:border-box;width:min(900px,100%);margin:22px auto;padding:0 18px;text-align:center}
+.pn-panel h1{font:500 25px system-ui;margin:10px 0 18px;color:#eee}
+.pn-hint{font:14px/1.6 system-ui;color:#a5a5a0;max-width:720px;margin:12px auto 20px}
+.pn-panel :is(button,a),.pn-wall-actions button,.pn-dialog button{display:inline-block;background:#222;color:#eee;border:1px solid #45453e;border-radius:22px;padding:10px 18px;margin:4px;font:14px system-ui;cursor:pointer;text-decoration:none}
+.pn-panel button[aria-pressed=true]{border-color:#e9b344;color:#e9b344}
+.pn-list-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:4px}
+.pn-list-bar button{border-radius:0}
+body.pinless-discovery .pt-header>.pn-list-bar{display:flex;flex-wrap:nowrap;justify-content:safe center;gap:6px;overflow-x:auto;scrollbar-width:thin;margin:0;padding:2px 0}
+body.pinless-discovery .pt-header>.pn-list-bar button{flex:0 0 auto;white-space:nowrap;background:#111;color:#eee;border:1px solid #45453e;border-radius:0;padding:6px 10px;margin:0;font:600 12px/20px system-ui;cursor:pointer}
+body.pinless-discovery .pt-header>.pn-list-bar button[aria-pressed=true]{border-color:#e9b344;color:#e9b344}
+.pn-panel select,.pn-dialog input{padding:10px;background:#222;color:#eee;border:1px solid #555;border-radius:8px;font:16px system-ui}
+.pn-wall-actions{clear:both;display:flex;justify-content:center;margin:18px}
+.pn-notice{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:100;padding:12px 20px;background:#292a25;border:1px solid #686958;border-radius:12px;max-width:calc(100vw - 32px);box-sizing:border-box;color:#eee;font:14px system-ui;box-shadow:0 5px 25px #0009}
+.pn-dialog{background:#202020;color:#eee;border:1px solid #555;border-radius:16px;padding:24px;max-width:calc(100vw - 40px)}
+.pn-dialog::backdrop{background:#000a}.pn-dialog input{display:block;margin:14px 0;max-width:100%;box-sizing:border-box}
+body .pn-inline-following{display:block;position:static;max-height:none;width:100%;max-width:none;padding:0;border:0;margin:0;background:transparent;color:#eee}
+.pn-inline-following>h2,.pn-inline-following>p{display:none}
+.pn-inline-following .following-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:4px;margin:20px 0}
+.pn-inline-following .following-row{display:flex;flex-direction:column;background:#242521;border:1px solid #363830;border-radius:18px;padding:20px 8px;min-height:95px;justify-content:center}
+.pn-inline-following .following-row a{border:0;background:none;overflow-wrap:anywhere;margin:0;padding:8px}
+.pn-inline-following .following-row button{font-size:12px;padding:5px 10px;align-self:center}
+.pn-armed,.pn-clear-armed .media-wall>div{box-shadow:inset 0 0 0 1000px #bd303066!important;background-color:#743b38!important}
+.media-wall>div.pn-armed::after,.pn-clear-armed .media-wall>div::after{content:'';position:absolute;inset:0;background:#d3303055;pointer-events:none;z-index:10}
+.pn-added{animation:pn-save .24s linear}.pn-removed{animation:pn-remove .24s linear}
+@keyframes pn-save{0%,50%{border-color:#63ab6c}25%,75%{border-color:#242521}}
+@keyframes pn-remove{0%,50%{border-color:#669ed2}25%,75%{border-color:#242521}}
+body.pt-term-manager-page #pt-term-manager{width:min(900px,100%);max-width:100%;padding:12px;box-sizing:border-box}
+body.pt-term-manager-page .pt-term-wall{padding:15px 0}
+@media(max-width:1100px){body.pinless-discovery .pt-header{flex-wrap:wrap!important}body.pinless-discovery .pt-header>.pt-interest-bar{order:3;flex-basis:100%!important}body.pinless-discovery .pt-header .pt-search{flex:1 1 150px!important}body.pinless-discovery .pt-header .pt-nav{flex:0 0 auto!important}body.pinless-discovery .pt-header>.pt-list-bar{order:3;flex-basis:100%}}
+@media(max-width:600px){body.pinless-discovery .pt-header{gap:5px!important;padding:6px!important}body.pinless-discovery .pt-header :is(.pt-circle,.pt-brand,.pt-menu>summary){width:32px!important;height:32px!important;flex-basis:32px!important}body.pinless-discovery .pt-header .pt-search{min-width:90px!important;flex:1 1 90px!important}body.pinless-discovery .pt-header .pt-nav{width:auto!important;min-width:0;gap:5px}body.pinless-discovery .pt-header .pt-active-playlist{max-width:90px!important}body.pinless-discovery .pt-header .pt-nav{margin-left:0}body.pinless-discovery .pt-header>.pt-interest-bar{order:4}body.pinless-discovery .pt-header>.pt-list-bar{order:4}.pn-panel{margin-top:10px}}
+
+body .media-wall>div.pn-moving{border-color:#e9b344!important}
+body.pinless-discovery .pt-list-bar{display:flex;gap:6px;align-items:center}
+
+/* Match the input's visible center, including balanced space around the search icon. */
+body.pinless-discovery .pt-header.pt-interest-header .pt-search input#search{height:28px!important;padding:0 42px!important;text-align:center!important;font:12px/28px system-ui!important;box-sizing:border-box!important}
+body.pinless-discovery .pt-header .pt-interest-chip>span{display:block;line-height:normal;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+/* Feedback overlays stay visible on borderless image cards. */
+.pn-list-flash{position:absolute;inset:0;z-index:30;pointer-events:none;opacity:0;animation:pn-list-flash .24s linear!important}
+.pn-flash-save{background:#39bd65aa}.pn-flash-remove{background:#459ce2aa}
+@keyframes pn-list-flash{0%,49%,100%{opacity:0}1%,24%,50%,74%{opacity:1}25%,75%{opacity:0}}
+
+/* Favorites and the active board stay together at the start of navigation. */
+body .pt-header>.pt-favorites{display:flex;align-items:center;gap:8px;flex:0 0 auto;order:-1}
+body .pt-header .pt-favorites>.pt-circle{display:flex!important;align-items:center;justify-content:center;box-sizing:border-box;width:32px!important;height:32px!important;flex:0 0 32px;padding:0!important;border:1px solid #3b3b3b;border-radius:50%;background:#202020;color:#eee}
+body .pt-header .pt-favorites>.pt-active-playlist{display:block!important;box-sizing:border-box;max-width:160px;min-width:0;height:28px;padding:0 10px!important;border:1px solid #3b3b3b;background:#191919;color:#929292;font:500 12px/26px system-ui!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:600px){body .pt-header .pt-favorites>.pt-active-playlist{max-width:90px}}
+
+body.pinless-discovery .pt-header.pt-interest-header{padding:5px 8px!important;min-height:40px!important}
+body.pinless-discovery .pt-header>.pn-list-bar button{box-sizing:border-box;height:28px;padding:0 10px;font:500 12px/26px system-ui}
+body.pinless-discovery .pt-header>.pn-list-bar{padding:0}
+body.pinless-discovery .pt-header .pt-search{flex:0 1 220px!important;width:220px!important}
+
+/* Keep search submission on Enter and match the uncluttered YouTube input. */
+body.pinless-discovery .pt-header .pt-search button{display:none!important}
+body.pinless-discovery .pt-header.pt-interest-header .pt-search input#search{padding:0 12px!important}
+
+/* Following is an edge-to-edge wall; I reveals the import controls. */
+body.pn-following-page .pn-panel{width:100%;max-width:none;margin:0;padding:0 8px}
+body.pn-following-page .pn-panel>h1{display:none}
+body.pn-following-page .following-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:4px;margin:0}
+body.pn-following-page .following-row{display:block;position:relative;aspect-ratio:1;min-height:0;padding:0;border:0;border-radius:50%;overflow:hidden;background:#242521}
+body.pn-following-page .following-row>a{display:flex;position:relative;align-items:center;justify-content:center;width:100%;height:100%;box-sizing:border-box;margin:0;padding:18px;border-radius:50%;font-size:14px;text-align:center;overflow:hidden}
+body.pn-following-page .following-row img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%;background:#242521}
+body.pn-following-page .following-row>button{display:none}
+body.pn-following-page:not(.pn-following-edit) .pn-inline-following>form{display:none}
+body.pn-following-page .following-row:focus-within{outline:2px solid #e9b344;outline-offset:-3px}
+@media(max-width:600px){body.pn-following-page .following-list{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}}
+/* The term rows are centered within the whole page, not the settings panel width. */
+body.pinless-discovery.pt-term-manager-page #pt-term-manager{width:100%;max-width:none;margin:0!important;padding:0!important}
+body.pinless-discovery.pt-term-manager-page .pt-term-wall{padding:24px 12px}
+body.pinless-discovery.pt-term-manager-page .pt-term-tile{background:#242521}
+
+/* Softer rounded squares distinguish Pinless profiles from YouTube. */
+body.pn-following-page .following-row,body.pn-following-page .following-row>a,body.pn-following-page .following-row img{border-radius:25%}
+body.pn-following-page .following-row>a::after{content:attr(aria-label);position:absolute;left:0;right:0;bottom:8%;z-index:2;background:#000d;color:#fff;padding:8px 12px;font:600 12px/1.3 system-ui;text-align:center;overflow-wrap:anywhere;opacity:0;pointer-events:none}
+body.pn-following-page .following-row>a:is(:hover,:focus-visible)::after{opacity:1}
+
+/* Playlist picker (click the playlist name next to the star to change where A saves). */
+body .pt-header .pt-favorites>.pt-active-playlist{cursor:pointer!important;transition:color .12s,border-color .12s}
+body .pt-header .pt-favorites>.pt-active-playlist:is(:hover,:focus-visible,[aria-expanded=true]){color:#eee!important;border-color:#5c5c5c!important;outline:none}
+body .pt-header .pt-favorites>.pt-active-playlist[aria-expanded=true]{border-color:var(--pt-accent,#e6ad45)!important}
+.pt-playlist-picker{position:fixed;z-index:2147483000;display:flex;flex-direction:column;gap:2px;box-sizing:border-box;min-width:0;max-width:min(320px,calc(100vw - 16px));max-height:min(60vh,480px);overflow-y:auto;padding:4px;border:1px solid #3b3b3b;background:#191919;box-shadow:0 12px 32px #000b;scrollbar-width:thin}
+.pt-playlist-picker[hidden]{display:none!important}
+.pt-playlist-picker>button{all:unset;border-radius:0!important;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:30px;padding:6px 10px;border:1px solid transparent;color:#cfcfcf;font:500 12px/1.3 system-ui;cursor:pointer;white-space:nowrap}
+.pt-playlist-picker .pt-picker-name{overflow:hidden;text-overflow:ellipsis}
+.pt-playlist-picker .pt-picker-count{flex:0 0 auto;color:#777;font-variant-numeric:tabular-nums}
+.pt-playlist-picker>button:is(:hover,:focus-visible){background:#262626;color:#fff}
+.pt-playlist-picker>button[aria-checked=true]{border-color:var(--pt-accent,#e6ad45);background:#30291c;color:#fff}
+.pt-playlist-picker>button[aria-checked=true] .pt-picker-count{color:#c9a35a}
+@media(prefers-reduced-motion:reduce){body .pt-header .pt-favorites>.pt-active-playlist{transition:none}}
+/* On the Playlists page the name stays amber (you are looking at that playlist) and is still the menu. */
+body .pt-header .pt-favorites>.pt-active-playlist.pt-playlist-here,body .pt-header .pt-favorites>.pt-active-playlist.pt-playlist-here:is(:hover,:focus-visible,[aria-expanded=true]){cursor:pointer!important;border-color:var(--pt-accent,#e6ad45)!important;background:var(--pt-accent,#e6ad45)!important;color:#17140e!important;font-weight:600!important}
+/* Playlist menu shortcuts (2026-10-10): A new, R rename, X twice delete; the last playlist stays. */
+body .pt-header .pt-favorites>.pt-active-playlist.pt-playlist-here:is(:hover,:focus-visible,[aria-expanded=true]){filter:brightness(1.1)}
+.pt-playlist-picker>.pt-picker-hint{box-sizing:border-box;width:0;min-width:100%;margin:2px 0 0;padding:6px 10px 3px;border-top:1px solid #2c2c2c;color:#6f6f6f;font:500 11px/1.3 system-ui;white-space:normal;overflow-wrap:anywhere}
+.pt-playlist-picker>.pt-picker-hint:empty{display:none}
+.pt-playlist-picker>.pt-picker-hint.pt-picker-warn{color:#ef9aa8}
+.pt-playlist-picker>button.pt-list-delete-armed,.pt-playlist-picker>button.pt-list-delete-armed:is(:hover,:focus-visible){background:#762e38!important;border-color:#e87080!important;color:#fff!important}
+.pt-playlist-picker>.pt-picker-edit{display:flex;padding:2px 0}
+.pt-playlist-picker>.pt-picker-edit>input{all:unset;box-sizing:border-box!important;width:100%!important;height:30px!important;min-height:30px;margin:0!important;padding:6px 10px!important;border:1px solid var(--pt-accent,#e6ad45)!important;border-radius:0!important;background:#121212!important;color:#fff!important;font:500 12px/1.3 system-ui!important;box-shadow:none!important;outline:none!important}
+.pt-playlist-picker>.pt-picker-edit>input::placeholder{color:#777}
+.pt-playlist-picker.pt-move-targets>button:hover{border-color:#79b0ef!important;background:#243d60!important;color:#fff!important}
+/* Search groups (2026-10-10): magnifying glass (the group's feed) + the group name, a dropdown like the playlist name.
+   They sit just left of the search term chips: star, playlist, feeds, search, magnifying glass, group, chips. */
+body .pt-header>.pt-groups{display:flex;align-items:center;gap:8px;flex:0 0 auto;min-width:0}
+body .pt-header .pt-groups>.pt-circle{display:flex!important;align-items:center;justify-content:center;box-sizing:border-box;width:32px!important;height:32px!important;flex:0 0 32px;padding:0!important;border:1px solid #3b3b3b;border-radius:50%!important;background:#202020;color:#eee!important;text-decoration:none!important}
+body .pt-header .pt-groups>.pt-circle:is(:hover,:focus-visible){border-color:var(--pt-accent,#e6ad45)!important;outline:2px solid var(--pt-accent,#e6ad45)!important;outline-offset:0}
+body .pt-header .pt-groups>.pt-circle[aria-current=page]{background:var(--pt-accent,#e6ad45)!important;border-color:var(--pt-accent,#e6ad45)!important;color:#17140e!important}
+body .pt-header .pt-groups>.pt-active-group{display:block!important;box-sizing:border-box;max-width:160px;min-width:0;height:28px;padding:0 10px!important;border:1px solid #3b3b3b;background:#191919;color:#929292;font:500 12px/26px system-ui!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;transition:color .12s,border-color .12s}
+body .pt-header .pt-groups>.pt-active-group:is(:hover,:focus-visible,[aria-expanded=true]){color:#eee!important;border-color:#5c5c5c!important;outline:none}
+body .pt-header .pt-groups>.pt-active-group[aria-expanded=true]{border-color:var(--pt-accent,#e6ad45)!important}
+/* On the group's feed the name turns amber (you are looking at that group) and is still the menu. */
+body .pt-header .pt-groups>.pt-active-group.pt-playlist-here{border-color:var(--pt-accent,#e6ad45)!important;background:var(--pt-accent,#e6ad45)!important;color:#17140e!important;font-weight:600!important}
+body .pt-header .pt-groups>.pt-active-group.pt-playlist-here:is(:hover,:focus-visible,[aria-expanded=true]){filter:brightness(1.1)}
+body.pt-channel-page .pt-header>.pt-groups{display:none!important}
+@media(max-width:600px){body .pt-header>.pt-groups{order:3}body .pt-header .pt-groups>.pt-active-group{max-width:90px}.pt-interest-bar{order:4}}
+@media(prefers-reduced-motion:reduce){body .pt-header .pt-groups>.pt-active-group{transition:none}}
+
+/* Header order (2026-10-10): star, playlist, magnifier, search group, search bar, terms, image, Restore, Following, History, Menu. */
+body .pt-header .pt-groups>.pt-active-group{border-radius:8px!important}
+body .pt-header>.pt-interest-bar::before,body .pt-header>.pt-interest-bar::after{display:none!important;content:none!important}
+body .pt-header>.pt-interest-bar>.pt-interest-scroll{flex:1 1 auto!important}
+
+/* Header order v2 (2026-10-10): star, playlist, search bar, search group, magnifier, terms. The search group menu uses rounded rectangles. */
+.pt-playlist-picker.pt-group-picker{border-radius:10px!important}
+.pt-playlist-picker.pt-group-picker>button{border-radius:8px!important}
+.pt-playlist-picker.pt-group-picker>.pt-picker-edit>input{border-radius:8px!important}

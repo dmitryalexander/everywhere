@@ -1,0 +1,173 @@
+/* Everywhere's full-size Pinful/Individuous appearance, after shared styles. */
+/* Like Pinful, still images have square edges and no inset video frame. */
+body.pinless-discovery .media-wall>div.file-card.image-card{padding:0!important;border-radius:0!important;background:transparent}
+body.pinless-discovery .media-wall>div.file-card.image-card :is(.file-tile,.file-tile:after,img){border-radius:0!important}
+body.pinless-discovery .media-wall>div.file-card.image-card .file-tile:after{border-radius:0!important}
+body.pinless-discovery .media-wall>div.file-card.video-card{padding:8px!important;border-radius:18px!important}
+:root{--pt-accent:#e9b344;--pt-bg:#121212}
+.list-flash{position:absolute;inset:0;z-index:21;pointer-events:none;border-radius:inherit;animation:scratch-list-feedback .12s steps(1,end) 2 forwards}
+.list-added{background:rgba(45,180,100,.55);box-shadow:inset 0 0 0 2px #62d38e}
+.list-removed{background:rgba(180,43,65,.55);box-shadow:inset 0 0 0 2px #dc6578}
+@keyframes scratch-list-feedback{0%{opacity:1}50%,100%{opacity:0}}
+#preview-save{position:relative;overflow:hidden}
+/* Match Invidious's full-width, centered hover title. */
+.hover-title{left:0;right:0;padding:8px 10px;background:#171717e8;color:#eee;font:500 13px/1.4 system-ui;text-align:center;unicode-bidi:plaintext;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.zone-launch{top:0;height:10%}
+.zone-open{top:10%}
+.file-tile:has(.zone-launch:is(:hover,:focus-visible)):after{border-color:#b96170}
+/* The tile border already marks keyboard focus; avoid an extra amber strip. */
+.file-zone:focus-visible{outline:none}
+#pc-home{padding:24px 28px;max-width:1500px;margin:auto}
+#pc-home h1{font:500 25px/1.3 system-ui;margin:0 0 26px;color:#eee}
+#pc-home h2{font:500 14px/1.4 system-ui;color:#999;margin:0 0 12px}
+#pc-home section{margin-bottom:28px}
+.pc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.pc-location{display:flex;align-items:center;gap:16px;padding:20px;text-align:left;background:#20211f;border:1px solid #363730;border-radius:14px;min-width:0}
+.pc-location:hover{background:#2a2b26;border-color:#73603e}
+.pc-icon{color:var(--pt-accent);flex:0 0 36px}
+.pc-icon svg{width:36px;height:36px}
+.pc-location span:last-child{min-width:0}
+.pc-location strong{display:block;font-size:15px;font-weight:500}
+.pc-location small{display:block;font-size:11px;color:#888;overflow-wrap:anywhere;margin-top:6px}
+.pc-location>span:last-child{flex:1}
+.pc-location meter{display:block;width:100%;height:12px;margin-top:8px;accent-color:var(--pt-accent)}
+@media(max-width:620px){#pc-home{padding:18px 12px}.pc-grid{grid-template-columns:1fr}}
+[hidden]{display:none!important}
+body.pinless-discovery .pt-header.pt-interest-header{min-height:42px!important;padding:5px 8px!important;gap:8px!important;flex-wrap:nowrap!important}
+body.pinless-discovery .pt-header :is(.pt-circle,.pt-brand,.pt-menu>summary){width:32px!important;height:32px!important;flex:0 0 32px!important}
+body.pinless-discovery .pt-header svg{width:22px!important;height:22px!important}
+body.pinless-discovery .pt-header .pt-favorites{gap:8px}
+body.pinless-discovery .pt-header .pt-favorites>.pt-active-playlist,
+body.pinless-discovery .pt-header .pt-groups>.pt-active-group{height:28px!important;max-width:160px!important;padding:0 10px!important;font:500 12px/26px system-ui,sans-serif!important}
+body.pinless-discovery .pt-header .pt-favorites>.pt-active-playlist.pt-playlist-here{background:var(--pt-accent)!important;border-color:var(--pt-accent)!important;color:#17140e!important}
+body.pinless-discovery .pt-header .pt-search{order:0!important;flex:0 1 220px!important;width:220px!important;min-width:130px!important;height:28px!important}
+body.pinless-discovery .pt-header.pt-interest-header .pt-search input#search{height:28px!important;font:12px/28px system-ui,sans-serif!important;padding:0 12px!important}
+body.pinless-discovery .pt-header>.pt-interest-bar{order:0!important;flex:1 1 0!important;width:auto;min-width:0!important}
+body.pinless-discovery .pt-header .pt-interest-chip{height:28px!important;font:600 12px/26px system-ui,sans-serif!important;padding:0 14px!important;max-width:260px}
+body.pinless-discovery .pt-header .pt-interest-scroll{gap:6px}
+body.pinless-discovery .pt-header .pt-nav{order:1;margin-left:auto!important;gap:8px!important}
+body.pinless-discovery .pt-header>.pt-groups{order:0!important;gap:8px}
+body.pinless-discovery .media-wall>div.file-card{padding:8px!important;border-radius:18px!important;background:#242522}
+.file-cover{background:#1e1e1e;color:#eee;padding:18px}
+.file-cover.folder{background:#29261e;color:#e8cf9a}
+.current-folder .file-cover.folder{background:#353127;color:#e8cf9a}
+.file-cover small{font:12px/1.4 system-ui,sans-serif;color:#999}
+.file-cover strong{font-size:clamp(16px,7cqw,26px);line-height:1.25;font-weight:550}
+.file-cover pre{font:12px/1.65 Consolas,monospace;color:#b8b8b3;min-height:0}
+.file-cover:has(pre) strong{font-size:16px;flex-shrink:0;-webkit-line-clamp:2}
+.quiet-menu-panel{top:calc(100% + 8px);border-radius:12px}
+.quiet-menu-panel>button{font-size:14px}
+.quiet-menu-panel>p{font-size:12px}
+#path-bar{font-size:14px;padding:2px 12px 8px}
+.pt-interest-chip:focus-visible,.pt-interest-editor textarea:focus,.pt-interest-editor-actions button:focus-visible{outline-color:var(--pt-accent)}
+.pt-interest-editor-actions .pt-interest-save{background:var(--pt-accent);border-color:var(--pt-accent)}
+@media(max-width:620px){
+ body.pinless-discovery .pt-header.pt-interest-header{flex-wrap:wrap!important}
+ body.pinless-discovery .pt-header>.pt-interest-bar{order:3!important;flex:1 1 100%!important}
+ body.pinless-discovery .pt-header .pt-search{flex:1 1 140px!important}
+}
+@media(max-width:620px){
+ body.pinless-discovery .pt-header.pt-interest-header{gap:8px!important;padding:8px!important}
+ body.pinless-discovery .pt-header :is(.pt-circle,.pt-brand,.pt-menu>summary){width:32px!important;height:32px!important;flex-basis:32px!important}
+ body.pinless-discovery .pt-header svg{width:22px!important;height:22px!important}
+ body.pinless-discovery .pt-header .pt-favorites>.pt-active-playlist{max-width:90px!important;font-size:12px!important;padding:0 10px!important}
+ body.pinless-discovery .pt-header .pt-nav{gap:6px!important}
+ body.pinless-discovery .pt-header>.pt-groups{order:2!important}
+ body.pinless-discovery .pt-header .pt-groups>.pt-active-group{max-width:95px!important;font-size:12px!important}
+ body.pinless-discovery .pt-header .pt-search{order:2!important;flex:1 1 120px!important;min-width:100px!important}
+ body.pinless-discovery .pt-header .pt-interest-chip{font-size:12px!important}
+}
+.program-label{display:flex;align-items:center;gap:14px;min-width:0}.program-label strong{flex:1;min-width:0}.program-label img.exe-icon{width:clamp(40px,20cqw,72px);height:clamp(40px,20cqw,72px);object-fit:contain;flex-shrink:0}
+/* Folder destinations in the black caption, with space for long paths. */
+.hover-title.path-caption{text-align:left;font:11px/1.5 Consolas,monospace;overflow-wrap:anywhere;word-break:break-word;-webkit-line-clamp:4;max-height:calc(100% - 28px)}
+/* Squarer tiles, toolbar controls and panels. */
+body.pinless-discovery .media-wall>div.file-card{border-radius:6px!important}
+.file-tile,.file-tile:after{border-radius:4px!important}
+body.pinless-discovery .pt-header :is(.pt-circle,.pt-brand,.pt-menu>summary){border-radius:5px!important}
+body.pinless-discovery .pt-header .pt-search input#search,
+body.pinless-discovery .pt-header .pt-interest-chip,
+body.pinless-discovery .pt-header .pt-interest-scroll button,
+body.pinless-discovery .pt-header .pt-active-group,
+body.pinless-discovery .pt-header .pt-active-playlist{border-radius:4px!important}
+.pc-location,.quiet-menu-panel,.pn-dialog,.file-preview,#tag-guide,.pt-playlist-picker{border-radius:6px!important}
+#tag-guide .tag-options-row button,.file-preview footer button,.quiet-menu-panel>button,.pt-playlist-picker>button,.pn-notice{border-radius:4px!important}
+.item-rename{width:min(470px,92vw)}.item-rename h2{font-size:18px;margin:0 0 12px}.item-rename .rename-path{font:12px/1.5 Consolas,monospace;overflow-wrap:anywhere;color:#aaa}.item-rename input{display:block;width:100%;margin:9px 0;padding:10px}.item-rename .rename-hint,.item-rename [role=status]{font-size:12px;line-height:1.5}.item-rename [role=status]{color:#e9b344}.item-rename button{border-radius:4px}.recommended-quick-add{border-radius:6px!important}
+/* Favorites use a single line through the middle of the frame, without recoloring it. */
+body.pinless-discovery .media-wall[data-view="folder"]>div.file-card.saved:not(.remove-armed)::before{content:'';position:absolute;inset:3.5px;border:1px solid #a0a19a;border-radius:2px;pointer-events:none;z-index:8}
+body.pinless-discovery .media-wall>div.file-card.folder-card.saved::before{display:none}
+body.pinless-discovery .media-wall>div.file-card.folder-card::after{content:'';position:absolute;inset:8px;border:2px solid transparent;border-radius:14px;pointer-events:none;z-index:8}
+body.pinless-discovery .media-wall>div.file-card.current-folder::after{inset:18px}
+body.pinless-discovery .media-wall>div.file-card.folder-card:hover:not(.remove-armed)::after{border-color:#929292}
+body.pinless-discovery .media-wall>div.file-card.folder-card.saved:hover:not(.remove-armed)::after{border-color:#62b87a}
+.folder-card .file-tile:after{border-color:transparent!important}
+body.pinless-discovery .media-wall[data-view="folder"]>div.file-card.video-card.saved:not(.remove-armed)::before{border-radius:14px}
+body.pinless-discovery .media-wall[data-view="folder"]>div.file-card.image-card.saved:not(.remove-armed)::before{inset:0;border-radius:0}
+/* Program tiles fit their contents instead of using a media aspect ratio. */
+.program-card .file-tile{aspect-ratio:auto}
+.program-card .file-cover{height:auto;padding:14px 16px;gap:9px;justify-content:flex-start}
+.program-card .program-label{gap:12px}
+.program-card .program-label img.exe-icon{width:48px;height:48px}
+.program-card .program-label strong{font-size:clamp(15px,6cqw,22px)}
+.program-card .zone-launch{height:24px}
+.program-card .zone-open{top:24px;bottom:24px}
+.program-card .zone-folder{height:24px}
+/* App-only views use content widths and wrap instead of stretching columns. */
+body.pinless-discovery .media-wall.compact-programs{display:flex!important;flex-wrap:wrap;align-items:flex-start;gap:4px!important}
+body.pinless-discovery .media-wall.compact-programs>div.program-card{position:relative!important;width:max-content;max-width:min(420px,100%);flex:0 1 auto}
+.compact-programs .program-label{width:max-content;max-width:100%}
+.compact-programs .program-label strong{font-size:18px;flex:0 1 auto}
+body.pinless-discovery .media-wall.compact-programs>div.program-card{container-type:normal;max-width:min(420px,100%)!important}
+
+/* Navbar matches Pinless (October 12, 2026): round icon buttons, pill search box and term chips,
+   dark star on amber for the current page, amber ring on hover. Wall tiles keep their square corners. */
+body.pinless-discovery .pt-header :is(.pt-circle,.pt-brand,.pt-menu>summary){border-radius:50%!important}
+body.pinless-discovery .pt-header .pt-search input#search,
+body.pinless-discovery .pt-header .pt-interest-chip,
+body.pinless-discovery .pt-header .pt-interest-scroll button{border-radius:999px!important}
+body.pinless-discovery .pt-header .pt-active-group{border-radius:8px!important}
+body.pinless-discovery .pt-header .pt-active-playlist{border-radius:0!important}
+body.pinless-discovery .pt-header :is(.pt-circle,.pt-brand,.pt-menu>summary)[aria-current=page]{background:var(--pt-accent)!important;border-color:#3b3b3b!important;color:#17140e!important}
+body.pinless-discovery .pt-header :is(.pt-circle,.pt-brand,.pt-menu>summary):is(:hover,:focus-visible),
+body.pinless-discovery .pt-header .pt-menu[open]>summary{border-color:var(--pt-accent)!important;outline:2px solid var(--pt-accent)!important;outline-offset:0}
+
+/* Program tiles match folder and media tiles (October 12, 2026): same width and height in neat rows,
+   type at the top, icon and name in the middle, size at the bottom. */
+.program-card .file-tile{aspect-ratio:var(--ratio,1.65)}
+.program-card .file-cover{height:100%;padding:18px;gap:0;justify-content:space-between}
+.program-card .program-label{gap:14px}
+.program-card .program-label img.exe-icon{width:clamp(40px,18cqw,56px);height:clamp(40px,18cqw,56px)}
+.program-card .program-label strong{font-size:clamp(16px,7cqw,26px);-webkit-line-clamp:2}
+.program-card .zone-launch{height:10%}
+.program-card .zone-open{top:10%;bottom:max(10%,24px)}
+.program-card .zone-folder{height:max(10%,24px)}
+
+/* The containing-folder tile is the enclosing level: a substantially thicker frame. */
+body.pinless-discovery .media-wall>div.file-card.folder-card{border-radius:24px!important;background:#191a18}
+.folder-card .file-tile,.folder-card .file-tile:after{border-radius:14px!important}
+body.pinless-discovery .media-wall>div.file-card.current-folder{padding:18px!important;background:#242522!important;box-shadow:none}
+
+
+/* Folder captions stop at the inner fill; the hover outline stays above them. */
+.folder-card>.hover-title{left:8px;right:8px;bottom:16px;z-index:7}
+.current-folder>.hover-title{left:18px;right:18px;bottom:26px}
+
+/* XX removal: tint the whole tile, including edge-to-edge images and folder frames. */
+body.pinless-discovery .media-wall>div.file-card:is(.remove-armed,[data-removing="true"])::after{content:'';position:absolute;inset:0!important;z-index:30;border:2px solid #dc6578!important;border-radius:inherit!important;background:rgba(180,43,65,.55)!important;pointer-events:none;box-sizing:border-box}
+
+/* Compact folder breadcrumbs expand to their full names on hover or keyboard focus. */
+#path-bar{gap:6px;padding:4px 8px 8px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:#535449 transparent}
+#path-bar>span{display:none}
+#path-name{display:flex;align-items:center;gap:6px;flex:0 0 auto;min-width:0}
+#path-bar :is(.path-crumb,#pc-button){box-sizing:border-box;display:flex;align-items:center;justify-content:center;flex:0 0 auto;width:64px;height:32px;max-width:none;padding:0 10px;border:1px solid #514a38;border-radius:10px;background:#353127;color:#e8cf9a;font:500 12px/1.2 system-ui;cursor:pointer;white-space:nowrap}
+#path-bar .path-crumb span{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#path-bar :is(.path-crumb,#pc-button):is(:hover,:focus-visible){width:max-content;min-width:64px;border-color:#b1a27b;background:#423b2b}
+#path-bar .path-crumb[aria-current=location]{border-color:#81745a}
+#path-bar #up-button{flex:0 0 28px;height:28px;padding:0;border-radius:50%;color:#b9b7ab}
+
+/* This PC starts as an empty square and slides open to reveal its label. */
+#path-bar #up-button{display:none}
+#path-bar #pc-button{width:32px;min-width:32px;padding:0;overflow:hidden;transition:width .22s ease,background-color .22s ease}
+#path-bar #pc-button span{flex:0 0 auto;white-space:nowrap;opacity:0;transform:translateX(-8px);transition:opacity .16s ease,transform .22s ease}
+#path-bar #pc-button:is(:hover,:focus-visible){width:82px;min-width:32px}
+#path-bar #pc-button:is(:hover,:focus-visible) span{opacity:1;transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){#path-bar #pc-button,#path-bar #pc-button span{transition:none}}

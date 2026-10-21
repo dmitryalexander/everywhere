@@ -1,0 +1,19 @@
+/* Everywhere videos (October 14, 2026): silent hover previews and click-to-play inside the tile. */
+.file-tile video.sp-video{position:absolute;inset:0;z-index:2;display:block;width:100%;height:100%;margin:0;padding:0;border-radius:inherit;object-fit:cover;background:transparent;pointer-events:none;opacity:0;transition:opacity .2s}
+.file-tile.sp-video-on video.sp-video{opacity:1}
+@media(prefers-reduced-motion:reduce){.file-tile video.sp-video{transition:none}}
+/* Clicked playback: the whole picture, native controls along the bottom stay clickable. */
+.sp-inline-playing .file-tile video.sp-video-manual{pointer-events:auto;object-fit:contain;background:#000;opacity:1}
+.sp-inline-playing .file-tile .zone-open{bottom:44px}
+.sp-inline-playing .file-tile .zone-folder{display:none}
+.sp-inline-playing.sp-media-playing .hover-title{opacity:0!important;transition:none}
+/* Pause symbol while waiting or paused; a ring while loading (it keeps spinning with Windows animations off). */
+.sp-video-loader{position:absolute;left:50%;top:50%;z-index:6;width:36px;height:36px;box-sizing:border-box;margin:-18px 0 0 -18px;border:3px solid #ffffff50;border-top-color:#fff;border-right-color:#fff;border-radius:50%;background:#0002;box-shadow:0 0 0 5px #0003;pointer-events:none;animation:sp-video-spin .75s linear infinite}
+@keyframes sp-video-spin{to{transform:rotate(360deg)}}
+.sp-video-loader.sp-video-wait{animation:none;border:0;border-radius:0;background:linear-gradient(to right,#fff 0 32%,transparent 32% 68%,#fff 68%);width:20px;height:26px;margin:-13px 0 0 -10px;box-shadow:none;filter:drop-shadow(0 1px 3px #000)}
+.sp-volume-note{position:absolute;left:50%;top:12px;z-index:7;transform:translateX(-50%);padding:5px 10px;border-radius:4px;background:#171717e8;color:#eee;font:500 12px/1.4 system-ui;pointer-events:none;opacity:0;transition:opacity .2s}
+.sp-volume-note.sp-volume-show{opacity:1;transition:none}
+/* Space preview */
+.sp-dialog-player{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px}
+.sp-dialog-video{display:block;max-width:100%;max-height:70vh;margin:0 auto;background:#000;border-radius:4px}
+.sp-dialog-note{margin:0;color:#bbb;font:13px/1.4 system-ui;text-align:center}
