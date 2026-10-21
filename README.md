@@ -27,6 +27,10 @@ instructions below; generated executables and personal settings are excluded
 from this repository. Some browser tests still reflect the earlier ScratchPad
 interface; see [the project diary](PROJECT_DIARY.md) for verification limits.
 
+A fresh install starts with an empty Saved collection, no history, no saved
+search terms and no Restore location. Nothing is imported or saved automatically;
+This PC shows the new user's own drives and folders when they browse them.
+
 Not affiliated with voidtools.
 
 ## Requirements

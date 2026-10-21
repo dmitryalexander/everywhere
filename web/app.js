@@ -102,13 +102,7 @@ window.addEventListener('popstate',e=>{if(e.state?.folder)browse(e.state.folder,
 async function boot(){try{await connect();const [info,data]=await Promise.all([api('startup'),api('load_settings')]);locations=info.locations;preferences=data;document.body.dataset.everything=info.everythingRunning?'on':'off';store=data.browserStore||{};window.scratchVideo?.setup({session:()=>token,reconnect:async()=>{await connect();return token;},report,record,layout,openExternal:e=>open(e),converter:()=>!!info.previewConverter});size=260;labels=!!data.labels;order=data.sort||'Newest';syncPrefButtons();
   if(!store['scratchpad-collections-v1'])write('scratchpad-collections-v1',{activeId:'scratch',lists:[{id:'scratch',name:'Saved',items:Array.isArray(data.saved)?data.saved:[]}]});
   if(!store['scratchpad-search-term-lists-v1']&&data.searchLibrary?.groups?.length){write('scratchpad-search-term-lists-v1',{activeId:data.searchLibrary.activeId,lists:data.searchLibrary.groups.map(g=>({id:g.id,name:g.name,terms:g.terms.map(t=>t.query)}))});}
-  // Move the former This PC shortcuts into Favorites once; preserve existing collections.
-  if(!read('scratchpad-folder-favorites-v1',false)){
-    const data=collections();let favorites=data.lists.find(l=>l.name.toLowerCase()==='favorites');
-    if(!favorites){favorites={id:crypto.randomUUID(),name:'Favorites',items:[]};data.lists.push(favorites);}
-    for(const entry of locations)if(!favorites.items.some(e=>e.path.toLowerCase()===entry.path.toLowerCase()))favorites.items.push(entry);
-    write('scratchpad-collections-v1',data);write('scratchpad-folder-favorites-v1',true);await flush();
-  }
+  // Fresh installs keep Saved empty. This PC locations are never added to collections automatically.
   // Star page shows the active collection, as in Pinless: opening a list link makes it the active one.
   if(!params.has('q')&&(params.get('pt_page')||'lists')==='lists'){if(viewedCollection()&&viewedCollectionId!==activeCollection().id){const d=collections();d.activeId=viewedCollectionId;write('scratchpad-collections-v1',d);}else if(!viewedCollection())viewedCollectionId=null;}
   viewedCollectionId=viewedCollectionId||activeCollection().id;refreshCollection();window.ptMenuPicker($('#collection-name'),{here:!params.has('q')&&(params.get('pt_page')||'lists')==='lists',noun:'collection',nouns:'collections',menuLabel:'Save to collection',selectCurrent:true,blank:()=>({items:[]}),read:collections,save:d=>{write('scratchpad-collections-v1',d);return true;},refresh:()=>{refreshCollection();if(mode==='lists')showActiveCollection();},select:id=>{const d=collections();d.activeId=id;write('scratchpad-collections-v1',d);refreshCollection();if(mode==='lists')showActiveCollection();}});

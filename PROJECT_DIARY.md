@@ -116,8 +116,8 @@ carries no personal folder names.
 - No followed folders in Everywhere (`##` covers it). Restore keeps one last place.
 - No automatic import from ScratchPad.
 - No personal paths or names in code, tests, binaries or this diary.
-- Default new collection is named "Saved"; Favorites is filled with the standard Windows
-  folders.
+- Default new collection is named "Saved" and starts empty. Windows folders are not
+  automatically saved into Favorites or any other collection.
 - Uploads from the cloud workspace use a new staging name each time and are confirmed by
   checksum (a reused name once delivered a stale file).
 
@@ -363,3 +363,15 @@ TEMP and TMP inside ignored test-results passed all tests. Staged-file inspectio
 confirmed personal settings, generated executables, build output, logs and shortcuts
 are excluded. Existing third-party license files are retained unchanged. Live browser
 checks listed above remain pending; no runtime rebuild or settings changes were made.
+
+### 2026-10-21 - Fresh installations start empty
+
+Owner requested GitHub versions with no personal follows, saved items or history.
+Removed boot-time creation/population of Favorites from Windows quick locations.
+A fresh Everywhere installation now keeps only an empty Saved collection; This PC
+still discovers the new user's own locations when browsed. Existing saved collections
+are preserved and opt-in imports remain explicit. Updated README and current decisions.
+JavaScript syntax and diff checks pass. The published-tree audit found no tracked
+runtime data/settings, logs, shortcuts, known private configuration values or private
+runtime filenames in main history across all three repositories. Web is served from
+disk; this change needs a reload only and does not clear the installed user's data.
